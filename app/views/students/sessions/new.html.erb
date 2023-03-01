@@ -1,0 +1,33 @@
+<div class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <%= t(".title") %>
+    </div>
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg"><%= t(".message") %></p>
+        <%= form_with model: resource, url: new_student_session_path do |f| %>
+          <div class="input-group mb-3">
+            <%= f.email_field :email, { class: "form-control", placeholder: true } %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.password_field :password, { class: "form-control", placeholder: true } %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mb-3">
+            <%= f.submit t(".sign_in"), class: "btn btn-primary btn-block" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

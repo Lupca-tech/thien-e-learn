@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <!-- Reference: https://github.com/ColorlibHQ/AdminLTE/blob/v3.0.0/index.html -->
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+      <%= render "layouts/navbar/all" %>
+      <%= render "layouts/sidebar/all" %>
+
+      <div class="content-wrapper">
+        <%= render "layouts/breadcrumb" %>
+        <%= yield %>
+      </div>
+
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>
