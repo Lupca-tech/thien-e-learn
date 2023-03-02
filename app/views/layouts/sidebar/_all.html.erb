@@ -3,6 +3,8 @@
 
   <div class="sidebar">
     <%= render "layouts/sidebar/admin" %>
-    <%= render "layouts/sidebar/menu" %>
+    <% if logged_in_teacher? %>
+      <%= render "layouts/sidebar/menu" %>
+    <% end %>
   </div>
 </aside>
