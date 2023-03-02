@@ -6,11 +6,12 @@
     <i class="fa-solid fa-user">Tùy chọn</i> <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><%= link_to "Profile", current_teacher %></li>
-      <li><%= link_to "Settings", '#' %></li>
+      <li><%= link_to "Profile", current_teacher.name %></li>
+      <li><%= link_to "Đăng xuất",teachers_session_path, method: :DELETE %></li>
+      
       <li class="divider"></li>
       <li>
-      <%= link_to "Log out",teachers_session_path, method: :delete %>
+     
       </li>
     </ul>
     </li>

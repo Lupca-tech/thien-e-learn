@@ -9,9 +9,11 @@ module SessionsHelper
 			@current_teacher ||= Teacher.find_by(id: session[:teacher_id])
 		end
 	end
+	
 	def logged_in_teacher?
 		!current_teacher.nil?
 	end
+
 	def log_out_teacher
 		reset_session
 		@current_teacher = nil

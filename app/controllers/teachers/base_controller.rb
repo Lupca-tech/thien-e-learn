@@ -5,14 +5,12 @@ class Teachers::BaseController < ApplicationController
   private
 
   def current_teacher
-    @current_student ||= Student.find_by id: session[:current_student_id]
+    @current_teacher ||= Teacher.find_by id: session[:current_teacher_id]
   end
 
   def logged_in?
     !current_teacher.nil?
   end
 
-  def authenticate_student
-    redirect_to :controller => 'teachers_session', :action => 'new' unless logged_in?
-  end
+  
 end
