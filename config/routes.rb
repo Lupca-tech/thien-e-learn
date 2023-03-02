@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   namespace :teachers do
     resources :session, only: [:create, :new, :destroy]
+    resources :microposts, only: [:create, :show, :destroy]
   end
 end

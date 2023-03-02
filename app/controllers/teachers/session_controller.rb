@@ -15,7 +15,7 @@ class Teachers::SessionController < ApplicationController
     end
   end
   def destroy
-   log_out
+   log_out_teacher
    redirect_to root_url
   end
 end

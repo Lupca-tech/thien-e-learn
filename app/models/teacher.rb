@@ -6,7 +6,7 @@ class Teacher < ApplicationRecord
 	uniqueness: true
 	validates :password, presence: true, length: { minimum: 6 }
 	has_secure_password
-
+	has_many :microposts
 # Returns the hash digest of the given string.
 	def Teacher.digest(string)
 		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
