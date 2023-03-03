@@ -9,6 +9,5 @@ Rails.application.routes.draw do
 
   namespace :teachers do
     resources :session, only: [:create, :new, :destroy]
-    resources :teachers
   end
 end
