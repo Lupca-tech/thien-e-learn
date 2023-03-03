@@ -2,10 +2,9 @@
 	 <div class="login-box">
 	 	<div class="card-body login-card-body">
 	 		 <div class="login-logo">
-		      <%= t(".title") %>
+		      quản lý lớp
 		    </div>
-		  <p class="login-box-msg"><%= t(".message") %></p>
-
+        <p class="login-box-msg">Nhập tài khoản và mật khẩu của bạn</p>
         <%= form_with(url: teachers_session_index_path, scope: :session, local: true) do |f| %>
         <div class="input-group mb-3">
             <%= f.email_field :email, { class: "form-control", placeholder: true } %>

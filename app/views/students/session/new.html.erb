@@ -1,12 +1,12 @@
 <div class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <%= t(".title") %>
+      Vào lớp học
     </div>
     <div class="card">
       <div class="card-body login-card-body">
-        <p class="login-box-msg"><%= t(".message") %></p>
-        <%= form_with model: resource, url: new_student_session_path do |f| %>
+        <p class="login-box-msg">Nhập tài khoản và mật khẩu của bạn</p>
+        <%= form_with(url: students_session_index_path, scope: :session, local: true) do |f| %>
           <div class="input-group mb-3">
             <%= f.email_field :email, { class: "form-control", placeholder: true } %>
             <div class="input-group-append">

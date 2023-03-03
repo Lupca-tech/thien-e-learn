@@ -1,5 +1,7 @@
-<nav class="<%= 'main-header' if logged_in? %> navbar navbar-expand navbar-white navbar-light">
-  <%= render "layouts/navbar/links" %>
-  <%= render "layouts/navbar/form_search" %>
-  <%= render "layouts/navbar/widgets/all" %>
+<nav class="<%= 'main-header' if logged_in? %> navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <%= render "layouts/navbar/links" %>
+    <% render "layouts/navbar/form_search" %>
+    <%= render "layouts/navbar/widgets/all" %>
+  </div>
 </nav>

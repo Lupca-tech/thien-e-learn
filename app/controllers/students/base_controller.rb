@@ -1,7 +1,4 @@
 class Students::BaseController < ApplicationController
-  before_action :current_student
-  helper_method :current_student
-
   private
 
   def current_student

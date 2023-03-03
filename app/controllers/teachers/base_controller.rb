@@ -1,7 +1,4 @@
 class Teachers::BaseController < ApplicationController
-  before_action :current_teacher
-  helper_method :current_teacher
-
   private
 
   def current_teacher

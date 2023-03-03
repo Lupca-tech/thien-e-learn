@@ -1,12 +1,12 @@
 module SessionsHelper
 # Logs in the given user.
 	def log_in_teacher(teacher)
-		session[:teacher_id] = teacher.id
+		session[:current_teacher_id] = teacher.id
 	end
 	# Returns the current logged-in user (if any).
 	def current_teacher
-		if session[:teacher_id]
-			@current_teacher ||= Teacher.find_by(id: session[:teacher_id])
+		if session[:current_teacher_id]
+			@current_teacher ||= Teacher.find_by(id: session[:current_teacher_id])
 		end
 	end
 	
