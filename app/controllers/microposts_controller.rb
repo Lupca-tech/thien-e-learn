@@ -53,6 +53,6 @@ class MicropostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def micropost_params
-      params.require(:micropost).permit(:content, :teacher_id, :img_link)
+      params.require(:micropost).permit(:content, :teacher_id)
     end
 end
