@@ -1,0 +1,47 @@
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <li class="nav-item has-treeview menu-open">
+  <a href="#" class="nav-link <%= active_menu('microposts') %>">
+      <i class="nav-icon fas fa-tachometer-alt"></i>
+      <p>
+        Tin Tức 
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="/microposts/new" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Tạo tin mới</p>
+        </a>
+      </li>
+    </ul>
+      <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="/microposts" class="nav-link ">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Danh sách tin tức</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <li class="nav-item has-treeview menu-open">
+    <a href="#" class="nav-link <%= active_menu('qandas') %>">
+      <i class="nav-icon fas fa-question-circle"></i>
+      <p>
+        Hỏi đáp
+      </p>
+    </a>
+  </li>
+</ul>
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <li class="nav-item has-treeview menu-open">
+    <a href="<%= teachers_session_path(current_teacher) %>" data-method="delete"  class="nav-link">
+      <i class="nav-icon fas fa-question-circle"></i>
+      <p>
+        Đăng xuất
+      </p>
+    </a>
+  </li>
+</ul>
