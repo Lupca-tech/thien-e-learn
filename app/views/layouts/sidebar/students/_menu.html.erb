@@ -3,7 +3,7 @@
     <a href="#" class="nav-link <%= active_menu('microposts') %>">
       <i class="nav-icon fas fa-tachometer-alt"></i>
       <p>
-        Tin Tức 
+        Tin Tức
         <i class="right fas fa-angle-left"></i>
       </p>
     </a>
@@ -41,7 +41,27 @@
       <a href="#" class="nav-link <%= active_menu('qandas') %>">
       <i class="nav-icon fas fa-question-circle"></i>
       <p>
+        Hỏi đáp
+      </p>
+    </a>
+  </li>
+</ul>
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <li class="nav-item has-treeview menu-open">
+      <a href="#" class="nav-link <%= active_menu('timer') %>">
+      <i class="nav-icon fas fa-clock"></i>
+      <p>
         Hẹn giờ
+      </p>
+    </a>
+  </li>
+</ul>
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <li class="nav-item has-treeview menu-open">
+    <a href="<%= students_session_path(current_student) %>" data-method="delete"  class="nav-link">
+      <i class="nav-icon fas fa-sign-out-alt"></i>
+      <p>
+        Đăng xuất
       </p>
     </a>
   </li>
