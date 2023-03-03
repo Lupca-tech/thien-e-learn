@@ -2,5 +2,7 @@
 <% flash.each do |message_type, message| %>
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 <% end %>
-<%= yield %>
+  <div class="content-wrapper" style="<%= 'margin-left: 0 !important' unless logged_in? %>">
+    <%= yield %>
+  </div>
 <%= render "layouts/footer" %>
