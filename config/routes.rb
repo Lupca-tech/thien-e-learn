@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :microposts
   root 'home#index'
   get 'calendar/show'
   
