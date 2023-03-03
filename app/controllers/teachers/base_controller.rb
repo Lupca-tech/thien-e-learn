@@ -11,6 +11,4 @@ class Teachers::BaseController < ApplicationController
   def logged_in?
     !current_teacher.nil?
   end
-
-  
 end
