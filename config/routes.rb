@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   resources :microposts
   root 'home#index'
-  get 'calendar/show'
   
   namespace :students do
     resources :session, only: [:create, :new, :destroy]
+    get 'calendar/show'
   end
 
   namespace :teachers do
