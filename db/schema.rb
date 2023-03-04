@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2023_03_02_182127) do
   create_table "microposts", force: :cascade do |t|
     t.text "content"
     t.integer "teacher_id", null: false
-    t.text "img_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index "\"user_id\", \"created_at\"", name: "index_microposts_on_user_id_and_created_at"

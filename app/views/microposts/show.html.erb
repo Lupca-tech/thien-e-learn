@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @micropost.content %>
-</p>
+  <div class="post">
+    <div class="user-block">
+        <img class="img-circle img-bordered-sm" src="https://i.pinimg.com/474x/4e/e2/dc/4ee2dc71d7cb5e3b0468b5a0c4adb4c7.jpg" alt="User Image">
+        <span class="username">
+          <%= @teacher = @micropost.teacher_id %>
+          <a href="#"><%= Teacher.find_by(id: @teacher).name %></a>
+          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+        </span>
+        <span class="description"> <%= @micropost.created_at %></span>
+    </div>
+        <%= @micropost.content %>
+                      <!-- /.user-block -->
+    <div class="row mb-3">
+       
+        </div>
+        <p>
+        <%= link_to 'Edit', edit_micropost_path(@micropost) %> |
+        <%= link_to 'Back', microposts_path %>
+                       
+        </p>
 
-<p>
-  <strong>Teacher:</strong>
-  <%= @micropost.teacher_id %>
-</p>
-
-<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
-<%= link_to 'Back', microposts_path %>
+    </div>

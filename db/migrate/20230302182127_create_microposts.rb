@@ -3,8 +3,6 @@ class CreateMicroposts < ActiveRecord::Migration[6.1]
     create_table :microposts do |t|
       t.text :content
       t.references :teacher, null: false, foreign_key: true
-      t.text :img_link
-
       t.timestamps
     end
     add_index :microposts, [:user_id, :created_at]
