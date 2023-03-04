@@ -4,8 +4,7 @@
       <p class="card-text"><%= micropost.content %></p>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/microposts/<%= micropost.id %>">View </a></button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+          Bộ môn: <%= micropost.subject %>
         </div>
         <small class="text-body-secondary"><%= time_ago_in_words(micropost.created_at) %></small>
       </div>
