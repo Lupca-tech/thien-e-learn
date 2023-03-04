@@ -38,14 +38,28 @@
 </ul>
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
   <li class="nav-item has-treeview menu-open">
-      <a href="#" class="nav-link <%= active_menu('qandas') %>">
+    <a href="#" class="nav-link <%= active_menu('microposts') %>">
       <i class="nav-icon fas fa-question-circle"></i>
       <p>
-        Hỏi đáp
+       Hỏi đáp
+        <i class="right fas fa-angle-left"></i>
       </p>
     </a>
+
+    <% @list_rooms.each do |list_rooms| %>
+
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="chat_rooms/<%= list_rooms.id %>" class="nav-link">
+          <i class="far fa-comments nav-icon"></i>
+          <p><%= list_rooms.name %></p>
+        </a>
+      </li>
+    </ul>
+    <% end %>
   </li>
 </ul>
+
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
   <li class="nav-item has-treeview menu-open">
       <a href="#" class="nav-link <%= active_menu('timer') %>">

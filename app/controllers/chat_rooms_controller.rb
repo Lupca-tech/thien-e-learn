@@ -1,14 +1,19 @@
 class ChatRoomsController < ApplicationController
   before_action :set_chat_room, only: [:show, :edit, :update, :destroy]
-
-  # GET /chat_rooms
+ 
+  include ChatRoomsHelper
+  # GET / chat_rooms
   def index
     @chat_rooms = ChatRoom.all
-    @room_teacher = ChatRoom.find_by(teacher_id: current_teacher.id)
+    set_message_id
+    
   end
 
   # GET /chat_rooms/1
   def show
+   set_message_id
+   set_room
+    render 'index'
   end
 
   # GET /chat_rooms/new
@@ -51,6 +56,7 @@ class ChatRoomsController < ApplicationController
     def set_chat_room
       @chat_room = ChatRoom.find(params[:id])
     end
+    
 
     # Only allow a list of trusted parameters through.
     def chat_room_params

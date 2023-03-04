@@ -1,14 +1,14 @@
 <%= form_for ChatMessage.new ,remote: true do |f| %>
   <div class="input-group">
     <%= f.text_field :content, placeholder: "Type Messages ...", class: "form-control" %>
-  </div>
+  </div> 
 
     <div class="field">
-      <%= f.hidden_field :teacher_id, :value => @teacher_id %>
+      <%= f.hidden_field :teacher_id, :value => @sender_id %>
     </div>
-  <div class="field">
-    <%= f.hidden_field :student_id,:value => @student_id %>
-  </div>
+    <div class="field">
+      <%= f.hidden_field :student_id, :value => @sender_id%>
+    </div>
   <div class="field">
   
     <%= f.hidden_field :chat_room_id,:value => @room_teacher.id %>

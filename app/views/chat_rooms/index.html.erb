@@ -3,9 +3,4 @@
 <h1 style="text-align: center;">Phòng Hỏi đáp bộ môn </h1>
 
 <br>
-<% if @room_teacher.blank? %>
-  <%= link_to 'Tạo phòng ', new_chat_room_path %>
-<% else %>
-   <%= render 'chat_form',collection: @room_teacher, as: "room_teacher"%>
-
-<% end %>
+  <%= render 'chat_form', locals: {you_use: you_use, room_teacher: @room_teacher, sender_id: @sender_id,room: @room,messages: @messages}%>

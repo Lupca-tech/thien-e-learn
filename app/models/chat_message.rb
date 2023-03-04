@@ -1,4 +1,4 @@
 class ChatMessage < ApplicationRecord
-  belongs_to :teacher
-  belongs_to :student
+  belongs_to :teacher, optional: true
+  belongs_to :student, optional: true
 end

@@ -1,6 +1,6 @@
 class ChatMessagesController < ApplicationController
   before_action :set_chat_message, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_message_id, only: [:show, :edit, :update, :destroy]
   # GET /chat_messages
   def index
     @chat_messages = ChatMessage.all
@@ -22,15 +22,8 @@ class ChatMessagesController < ApplicationController
 
   # POST /chat_messages
   def create
-    if current_teacher
-      @teacher_id = current_teacher.id
-      @student_id = ""
-    elsif current_student
-      @teacher_id = ""
-      @student_id = current_student.id
-    end
+   
     @chat_message = ChatMessage.new(chat_message_params)
-    binding.pry
     if @chat_message.save
       redirect_to @chat_message, notice: 'Chat message was successfully created.'
     else
@@ -58,7 +51,7 @@ class ChatMessagesController < ApplicationController
     def set_chat_message
       @chat_message = ChatMessage.find(params[:id])
     end
-
+    
     # Only allow a list of trusted parameters through.
     def chat_message_params
       params.require(:chat_message).permit(:content, :teacher_id, :student_id, :chat_room_id)
