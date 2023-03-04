@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_04_032651) do
+ActiveRecord::Schema.define(version: 2023_03_04_112814) do
+
+  create_table "chat_messages", force: :cascade do |t|
+    t.string "content"
+    t.integer "teacher_id"
+    t.integer "student_id"
+    t.integer "chat_room_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chat_room_id", "created_at"], name: "index_chat_messages_on_chat_room_id_and_created_at"
+    t.index ["chat_room_id"], name: "index_chat_messages_on_chat_room_id"
+    t.index ["student_id", "created_at"], name: "index_chat_messages_on_student_id_and_created_at"
+    t.index ["student_id"], name: "index_chat_messages_on_student_id"
+    t.index ["teacher_id", "created_at"], name: "index_chat_messages_on_teacher_id_and_created_at"
+    t.index ["teacher_id"], name: "index_chat_messages_on_teacher_id"
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "teacher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["teacher_id", "created_at"], name: "index_chat_rooms_on_teacher_id_and_created_at"
+    t.index ["teacher_id"], name: "index_chat_rooms_on_teacher_id"
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -38,5 +62,9 @@ ActiveRecord::Schema.define(version: 2023_03_04_032651) do
     t.string "subject"
   end
 
+  add_foreign_key "chat_messages", "chat_rooms"
+  add_foreign_key "chat_messages", "students"
+  add_foreign_key "chat_messages", "teachers"
+  add_foreign_key "chat_rooms", "teachers"
   add_foreign_key "microposts", "teachers"
 end
