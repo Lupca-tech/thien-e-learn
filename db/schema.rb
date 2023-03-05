@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_04_035041) do
+ActiveRecord::Schema.define(version: 2023_03_04_041153) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2023_03_04_035041) do
     t.datetime "updated_at", precision: 6, null: false
     t.index "\"user_id\", \"created_at\"", name: "index_microposts_on_user_id_and_created_at"
     t.index ["teacher_id"], name: "index_microposts_on_teacher_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "student_id"
+    t.datetime "date"
+    t.bigint "subject_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "students", force: :cascade do |t|
