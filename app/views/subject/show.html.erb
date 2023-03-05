@@ -1,0 +1,64 @@
+<div class="card card-warning direct-chat direct-chat-warning shadow">
+              <div class="card-header">
+                <h3 class="card-title">Phòng chat bộ môn : <%= @subject.name %> </h3>
+                <div class="card-tools">
+                  <!-- <span title="3 New Messages" class="badge bg-danger">3</span> -->
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+          
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <!-- Conversations are loaded here -->
+
+                  <% @messages.each do |message| %>
+                  	<% if message.teacher_id %>
+
+                       <%= render 'message', message: message %>
+                    <% else %>    
+                        <%= render 'message_other', message: message  %>
+                    <% end %> 
+                   <% end %> 
+                
+                <!--/.direct-chat-messages-->
+
+                <!-- Contacts are loaded here -->
+                <div class="direct-chat-contacts">
+                  <ul class="contacts-list">
+                    <li>
+                      <a href="#">
+                        <img class="contacts-list-img" src="../dist/img/user1-128x128.jpg" alt="User Avatar">
+
+                        <div class="contacts-list-info">
+                          <span class="contacts-list-name">
+                            Count Dracula
+                            <small class="contacts-list-date float-right">2/28/2015</small>
+                          </span>
+                          <span class="contacts-list-msg">How have you been? I was...</span>
+                        </div>
+                        <!-- /.contacts-list-info -->
+                      </a>
+                    </li>
+                    <!-- End Contact Item -->
+                  </ul>
+                  <!-- /.contatcts-list -->
+                </div>
+                <!-- /.direct-chat-pane -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+              
+          	<%=  render 'send_form' , locals: { subject: @subject ,send_id: @sender_id}%>
+
+                   
+                    
+          
+        
+              </div>
+              <!-- /.card-footer-->
+            </div>
+            <!--/.direct-chat -->
+          </div>
+          <!-- /.col -->

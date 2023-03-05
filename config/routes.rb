@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+ 
+  resources :subject
+  resources :chat_messages
   resources :microposts
   root 'home#index'
   

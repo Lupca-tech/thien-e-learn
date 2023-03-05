@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
   helper_method :logged_in?
-
+  @subjects = Subject.all
 
   def logged_in?
     @current_student || @current_teacher
