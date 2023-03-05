@@ -22,7 +22,6 @@ class MicropostsController < ApplicationController
   # POST /microposts
   def create
     @micropost = Micropost.new(micropost_params)
-
     if @micropost.save
       redirect_to @micropost, notice: 'Micropost was successfully created.'
     else
