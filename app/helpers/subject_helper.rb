@@ -1,6 +1,10 @@
 module SubjectHelper
   def subjects
-    Subject.all
+   if current_teacher.present?
+      Subject.where(teacher_id: current_teacher.id)
+    else
+      Subject.all
+    end  
   end
 
   def subject_for_select
