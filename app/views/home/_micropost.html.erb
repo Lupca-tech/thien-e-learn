@@ -2,12 +2,6 @@
   <div class="card shadow-sm">
     <div class="card-body">
       <p class="card-text"><%= micropost.content %></p>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          Bộ môn: <%= micropost.subject %>
-        </div>
-        <small class="text-body-secondary"><%= time_ago_in_words(micropost.created_at) %></small>
-      </div>
     </div>
   </div>
 </div>

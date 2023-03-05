@@ -1,7 +1,11 @@
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <%= render partial: "micropost", collection: @microposts %>
-      </div>
-    </div>
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <% @microposts.each do |microposts| %>
+      <% microposts = microposts[1] %>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item active" aria-current="true"><%= microposts.first.subject %></li>
+        <%= render partial: "micropost", collection: microposts %>
+      </ul>
+    <% end %>
   </div>
+</div>
