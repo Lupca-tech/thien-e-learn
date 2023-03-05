@@ -18,3 +18,5 @@ import "@fortawesome/fontawesome-free/js/all";
 
 require("admin-lte");
 import "../stylesheets/application";
+require("jquery")
+require("@nathanvda/cocoon")

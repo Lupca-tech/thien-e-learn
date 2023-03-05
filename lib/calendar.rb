@@ -4,9 +4,13 @@ class Calendar < Struct.new(:view, :date, :callback)
 
   delegate :content_tag, to: :view
 
+  def view_by
+    :week
+  end
+
   def table
     content_tag :table, class: "calendar table table-bordered table-striped" do
-      header + week_rows
+      header + week_row
     end
   end
 
@@ -14,6 +18,12 @@ class Calendar < Struct.new(:view, :date, :callback)
     content_tag :tr do
       HEADER.map { |day| content_tag :th, day }.join.html_safe
     end
+  end
+
+  def week_row
+      content_tag :tr do
+        week.map { |day| day_cell(day) }.join.html_safe
+      end.html_safe
   end
 
   def week_rows
@@ -39,5 +49,11 @@ class Calendar < Struct.new(:view, :date, :callback)
     first = date.beginning_of_month.beginning_of_week(START_DAY)
     last = date.end_of_month.end_of_week(START_DAY)
     (first..last).to_a.in_groups_of(7)
+  end
+
+  def week
+    first = date.beginning_of_week(START_DAY)
+    last = date.end_of_week(START_DAY)
+    first..last
   end
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :students do
     resources :session, only: [:create, :new, :destroy]
     get 'calendar/show'
+    patch 'calendar/create'
   end
 
   namespace :teachers do

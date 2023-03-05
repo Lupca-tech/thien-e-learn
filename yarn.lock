@@ -1022,6 +1022,13 @@
   resolved "https://registry.yarnpkg.com/@lgaitan/pace-progress/-/pace-progress-1.0.7.tgz#c96fbbd9fd4cf528feed34ea0c8f9d8b3e98f0dd"
   integrity sha512-GMoTcF6WBpno7a7Iyx7M79os26d5bCDbh7YTZmXZM8YuLR3DDtwo0/CBYddStGD6QIBTieFDz4IAQiO0dAdRGw==
 
+"@nathanvda/cocoon@^1.2.14":
+  version "1.2.14"
+  resolved "https://registry.yarnpkg.com/@nathanvda/cocoon/-/cocoon-1.2.14.tgz#aaea910e4b9c0d28d5bdcb7f3743617db46b09af"
+  integrity sha512-WcEt2vVp50de2i7rkD4O+96O1iMtMIcTBNGPocrHfcmHDujKOngoLHFF8Ektgoh8PjwFAJMxx8WyGv0BtKTjxQ==
+  dependencies:
+    jquery "^3.3.1"
+
 "@npmcli/fs@^1.0.0":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@npmcli/fs/-/fs-1.1.1.tgz#72f719fe935e687c56a4faecf3c03d06ba593257"
@@ -4629,7 +4636,7 @@ jquery@3.4.1:
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
 
-jquery@>=1.10, jquery@>=1.12.0, jquery@>=1.7, "jquery@>=1.8.0 <4.0.0", jquery@>=2.2, "jquery@^3.0 || ^2.0 || ^1.0", jquery@^3.4.0, jquery@^3.4.1, jquery@^3.6.0:
+jquery@>=1.10, jquery@>=1.12.0, jquery@>=1.7, "jquery@>=1.8.0 <4.0.0", jquery@>=2.2, "jquery@^3.0 || ^2.0 || ^1.0", jquery@^3.3.1, jquery@^3.4.0, jquery@^3.4.1, jquery@^3.6.0:
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.3.tgz#23ed2ffed8a19e048814f13391a19afcdba160e6"
   integrity sha512-bZ5Sy3YzKo9Fyc8wH2iIQK4JImJ6R0GWI9kL1/k7Z91ZBNgkRXE6U0JfHIizZbort8ZunhSI3jw9I6253ahKfg==
