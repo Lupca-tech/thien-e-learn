@@ -4,7 +4,7 @@
       <% microposts = microposts[1] %>
       <ul class="list-group list-group-flush">
         <h1></h1>
-        <li class="list-group-item active" style="font-size: 20px;" aria-current="true"><p>Thông báo bộ môn <%= microposts.first.teacher.subject.name %></p></li>
+        <li class="list-group-item active" style="font-size: 30px;" aria-current="true"><p>Thông báo bộ môn <%= microposts.first.teacher.subject.name %></p></li>
         <%= render partial: "micropost", collection: microposts %>
       </ul>
     <% end %>
