@@ -15,7 +15,7 @@
   <div class="col-md-12">
     <%= calendar @date do |date| %>
       <%= form_for(current_student, url: students_calendar_create_path) do |f| %>
-      <%= date.day %>
+      <p>Ngày: <%= date.day %></p>
 
       <div id='tasks'>
         <%= f.fields_for :schedules do |schedule| %>
