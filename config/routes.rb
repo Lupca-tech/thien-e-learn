@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :session, only: [:create, :new, :destroy]
     get 'calendar/show'
     patch 'calendar/create'
+    resources :countdowns
   end
 
   namespace :teachers do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_05_065112) do
+ActiveRecord::Schema.define(version: 2023_03_05_075427) do
 
   create_table "chat_messages", force: :cascade do |t|
     t.string "content"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2023_03_05_065112) do
     t.index ["subject_id"], name: "index_chat_messages_on_subject_id"
     t.index ["teacher_id", "created_at"], name: "index_chat_messages_on_teacher_id_and_created_at"
     t.index ["teacher_id"], name: "index_chat_messages_on_teacher_id"
+  end
+
+  create_table "countdowns", force: :cascade do |t|
+    t.datetime "time"
+    t.boolean "status"
+    t.integer "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_countdowns_on_student_id"
   end
 
   create_table "microposts", force: :cascade do |t|
@@ -70,5 +79,6 @@ ActiveRecord::Schema.define(version: 2023_03_05_065112) do
   add_foreign_key "chat_messages", "students"
   add_foreign_key "chat_messages", "subjects"
   add_foreign_key "chat_messages", "teachers"
+  add_foreign_key "countdowns", "students"
   add_foreign_key "microposts", "teachers"
 end

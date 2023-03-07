@@ -28,7 +28,6 @@
     </a>
 
   <% subjects.each do |subject| %>
-
     <ul class="nav nav-treeview">
       <li class="nav-item">
         <a href="/subject/<%= subject.id %>" class="nav-link">
@@ -42,7 +41,7 @@
 </ul>
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
   <li class="nav-item has-treeview menu-open">
-      <a href="#" class="nav-link <%= active_menu('timer') %>">
+      <a href="<%= students_countdowns_path %>" class="nav-link <%= active_menu('countdowns') %>">
       <i class="nav-icon fas fa-clock"></i>
       <p>
         Hẹn giờ

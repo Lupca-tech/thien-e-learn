@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hẹn giờ</h1>
+
+<%= render "countdown" if @countdowns.first.status == true %>
+<div class="album py-5 bg-body-tertiary">
+  <div class="container card-body table-responsive p-0">
+    <table class="table table-hover text-nowrap">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Trạng thái</th>
+          <th colspan="3">chức năng</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @countdowns.each do |countdown| %>
+          <tr>
+            <td><%= countdown.time.strftime("%I:%M%p") %></td>
+            <td><%= countdown.status ? "bật" : "tắt" %></td>
+            <td><%= link_to 'Show', students_countdown_path(countdown) %></td>
+            <td><%= link_to 'Edit', edit_students_countdown_path(countdown) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<% # link_to 'New Students Countdown', new_students_countdown_path %>
