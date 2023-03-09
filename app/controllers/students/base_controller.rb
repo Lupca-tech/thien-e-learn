@@ -12,7 +12,7 @@ class Students::BaseController < ApplicationController
     !current_student.nil?
   end
 
-  #để kiểm tra xem người dùng hiện tại có phải là học  hay không. 
+  #để kiểm tra xem người dùng hiện tại có phải là học sinh hay không. 
   def authenticate_student
     redirect_to :controller => 'students_session', :action => 'index' unless logged_in?
   end

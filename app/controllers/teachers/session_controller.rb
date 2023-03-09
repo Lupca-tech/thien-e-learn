@@ -15,7 +15,6 @@ class Teachers::SessionController < ApplicationController
    log_out_teacher 
    redirect_to root_url
   end
-
   private
 
   def teacher_params

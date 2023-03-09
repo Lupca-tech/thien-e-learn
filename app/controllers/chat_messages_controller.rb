@@ -21,12 +21,10 @@ class ChatMessagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_chat_message
       @chat_message = ChatMessage.find(params[:id])
     end
     
-    # Only allow a list of trusted parameters through.
     def chat_message_params
       #  hàm này dẽ lấy dự liệu mà người dùng truyền bao gồm content , student_id và subject_id,teacher_id  vào phục vụ cho hàm create bên trên 
       params.require(:chat_message).permit(:content, :teacher_id, :student_id, :subject_id)
