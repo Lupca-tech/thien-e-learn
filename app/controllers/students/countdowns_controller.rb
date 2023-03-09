@@ -1,25 +1,21 @@
 class Students::CountdownsController < Students::BaseController
   before_action :set_countdown, only: [:show, :edit, :update, :destroy]
 
-  # GET /students/countdowns
   def index
     @countdowns = Countdown.all
   end
 
-  # GET /students/countdowns/1
   def show
   end
 
-  # GET /students/countdowns/new
   def new
     @countdown = Countdown.new
   end
 
-  # GET /students/countdowns/1/edit
   def edit
   end
 
-  # POST /students/countdowns
+  # tạo giờ hẹn cho học sinh 
   def create
     @countdown = current_student.build_countdown(countdown_params)
 
@@ -30,7 +26,7 @@ class Students::CountdownsController < Students::BaseController
     end
   end
 
-  # PATCH/PUT /students/countdowns/1
+  #sửa giờ hẹn cho học sinh 
   def update
     if @countdown.update(countdown_params)
       redirect_to students_countdown_url(@countdown), notice: 'Cập nhật thành công.'
@@ -39,19 +35,19 @@ class Students::CountdownsController < Students::BaseController
     end
   end
 
-  # DELETE /students/countdowns/1
+  # xóa giờ hẹn của học sinh 
   def destroy
     @countdown.destroy
     redirect_to countdowns_url, notice: 'Countdown was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Lấy giờ hẹn của học sinh 
     def set_countdown
       @countdown = Countdown.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # lấy dữ liệu người dùng  nhập vào 
     def countdown_params
       hour = params[:countdown]["time(4i)"].to_i
       min = params[:countdown]["time(5i)"].to_i
