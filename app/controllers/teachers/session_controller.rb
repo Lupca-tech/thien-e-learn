@@ -21,7 +21,7 @@ class Teachers::SessionController < ApplicationController
     #  lấy thông tin email và password của người dùng gửi lên 
     params.require(:session).permit(:email, :password)
   end
-  # authenticate_teacher xác minh giáo viết 
+  # authenticate_teacher xác minh giáo viên  
   def authenticate_teacher
     @teacher = Teacher.find_by teacher_params
     return if @teacher

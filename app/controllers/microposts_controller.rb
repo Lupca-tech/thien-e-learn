@@ -8,10 +8,9 @@ class MicropostsController < ApplicationController
 
   def show
   end
-
+    #  Tạo 1 đối tượng mới 
   def new
     @micropost = Micropost.new
-    #  Tạo 1 đối tượng mới 
   end
 
   def edit
@@ -24,9 +23,9 @@ class MicropostsController < ApplicationController
       #  hàm này dùng để lưu đối tượng @Micropost  
       redirect_to @micropost, notice: 'Micropost was successfully created.' #nếu @Micropost được lưu lại CSDL thì  nó sẽ chuyển view người dùng về trang @Micropost với thông báo Micropost was successfully created  
     else
-      render :new  # đoạn code này ngược lại với đoạn code trên nếu nó không được lư  thì nó sẽ chuyển tiếp người dùng đến trang tạo mới bài đăng 
+      render :new  # đoạn code này ngược lại với đoạn code trên nếu nó không được lưu thì nó sẽ chuyển tiếp người dùng đến trang tạo mới bài đăng 
     end
-  endđ
+  end
 
   def update
     if @micropost.update(micropost_params)
@@ -44,7 +43,6 @@ class MicropostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_micropost
       @micropost = Micropost.find(params[:id])
       # lấy id của bài viết khi người dùng click 
