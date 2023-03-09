@@ -2,7 +2,7 @@ class MicropostsController < ApplicationController
   before_action :set_micropost, only: [:show, :edit, :update, :destroy]  # Hàm này để gọi đến hàm set_micropost để dùng chung cho các hàm show,edit,update,destroy
 
   def index
-    @microposts = Micropost.all
+    @microposts = current_teacher.microposts
      # truy vấn và lấy ra tất cả bản ghi có trong bảng Micropost 
   end
 
