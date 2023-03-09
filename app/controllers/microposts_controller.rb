@@ -1,27 +1,22 @@
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: [:show, :edit, :update, :destroy]  # Hàm này để gọi đến hàm set_micropost để dùng chung cho các hàm show,edit,update,destroy
 
-  # GET /microposts
   def index
     @microposts = Micropost.all
      # truy vấn và lấy ra tất cả bản ghi có trong bảng Micropost 
   end
 
-  # GET /microposts/1
   def show
   end
 
-  # GET /microposts/new
   def new
     @micropost = Micropost.new
     #  Tạo 1 đối tượng mới 
   end
 
-  # GET /microposts/1/edit
   def edit
   end
 
-  # POST /microposts
   def create
     @micropost = Micropost.new(micropost_params)  #  hàm này sẽ  sẽ tạo 1 đối tượng mới của micropost và lất dữ liệu request từ hàm micropost_params
 
@@ -33,7 +28,6 @@ class MicropostsController < ApplicationController
     end
   endđ
 
-  # PATCH/PUT /microposts/1
   def update
     if @micropost.update(micropost_params)
       redirect_to @micropost, notice: 'Micropost was successfully updated.'
@@ -42,7 +36,6 @@ class MicropostsController < ApplicationController
     end
   end
 
-  # DELETE /microposts/1
   def destroy
     @micropost.destroy
     redirect_to microposts_url, notice: 'Micropost was successfully destroyed.'

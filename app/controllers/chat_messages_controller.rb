@@ -1,18 +1,15 @@
 class ChatMessagesController < ApplicationController
   before_action :set_chat_message, only: [:show, :edit, :update, :destroy]
-  # GET /chat_messages
   def index
     @chat_messages = ChatMessage.all
     #  Hàm này lấy tất cả dữ liêu có trong bảng CHatmessage 
   end
 
 
-  # GET /chat_messages/new
   def new
     @chat_message = ChatMessage.new
 
   end
-  # POST /chat_messages
   def create 
     @chat_message = ChatMessage.new(chat_message_params)  #hàm sẽ tạo 1 đối tượng mới @chat_message và sẽ lấy dữ liệu từ hàm chat_message_params bên dưới 
     if @chat_message.save # hàm này dùng để lưu đối tượng @chat_message vào bảng 
