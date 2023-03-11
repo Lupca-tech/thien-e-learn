@@ -21,7 +21,7 @@
           <%= form.text_area :content, {class: "form-control", placeholder: "Nội dung bài viết ..."} %>
         </div>
         <div class="input-group mb-3">
-          <%= form.hidden_field :teacher_id, :value => current_teacher.id %>
+          <%= form.hidden_field :teacher_id, :value => current_teacher&.id %>
         </div>
         <div class="actions">
           <%= form.submit "Tạo tin ",class: "btn btn-warning" %>

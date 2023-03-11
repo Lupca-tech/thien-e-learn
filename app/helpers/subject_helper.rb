@@ -1,7 +1,7 @@
 module SubjectHelper
   def subjects
    if current_teacher.present?
-      Subject.where(teacher_id: current_teacher.id)
+      Subject.where(teacher_id: current_teacher&.id)
     else
       Subject.all
     end  

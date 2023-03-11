@@ -1,4 +1,4 @@
-<div class="card card-warning direct-chat direct-chat-warning shadow">
+<div class="card card-warning direct-chat direct-chat-warning shadow" id="subject_id" subject_id=<%= @subject.id %>>
               <div class="card-header">
                 <h3 class="card-title">Phòng chat bộ môn : <%= @subject.name %> </h3>
                 <div class="card-tools">
@@ -50,7 +50,7 @@
               <!-- /.card-body -->
               <div class="card-footer">
               
-          	<%=  render 'send_form' , locals: { subject: @subject ,send_id: @sender_id}%>
+          	<%=  render 'send_form' , locals: { subject: @subject.id ,send_id: @sender_id}%>
               </div>
               <!-- /.card-footer-->
             </div>
