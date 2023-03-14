@@ -1,4 +1,3 @@
-# app/channels/chat_channel.rb
 class ChatChannel < ApplicationCable::Channel
   def subscribed
     return unless params[:subject_id]
