@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2023_03_05_075427) do
     t.text "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "subject"
   end
 
   add_foreign_key "chat_messages", "students"
