@@ -1,6 +1,7 @@
 FROM ruby:3.2.1
 
 ENV LANG C.UTF-8
+ENV TZ="Asia/Ho_Chi_Minh"
 
 RUN apt-get update -qq \
     && apt-get install -y curl apt-transport-https wget \
